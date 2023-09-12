@@ -6,8 +6,12 @@
 }
 
 body{
+	
 	background: #080808;
 	color: #fff;
+}
+html{
+	scroll-behavior: smooth;
 }
 #header{
 	width: 100%;
@@ -15,6 +19,7 @@ body{
 	background-image: url('./images/bg1.jpg');
 	background-size: cover;
 	background-position: center;
+	
 
 }
 #container{
@@ -60,6 +65,9 @@ nav ul li a {
  nav ul li a:hover::after {
  	width: 100%
  }
+ nav .fa-solid{
+ 	display: none;
+ }
  .header-text{
  	margin-top: 20%;
  	font-size: 30px;
@@ -83,6 +91,7 @@ nav ul li a {
  	color: #ababab;
  	width: 100%;
  	height: 100vh;
+ 	
  }
  .row{
  	display: flex;
@@ -93,8 +102,10 @@ nav ul li a {
  	flex-basis: 35%;
  }
  .About-column-1 img {
- 	width: 100%;
- 	border-radius: 15px;
+ 	width: 50%;
+ 
+ 	padding-left: 50px;
+ 	padding-top: 20px;
  }
  .About-column-2{
  	flex-basis: 60%;
@@ -151,10 +162,11 @@ width: 50%;
 
 
 #services{
-	padding: 30px 0;
+	padding:  30px 0 ;
 	color: #fff;
  	width: 100%;
  	height: 100vh;
+ 	
 
 }
 .services-list {
@@ -199,8 +211,8 @@ width: 50%;
 
 
 #projects{
-	padding: 50px 0;
-}
+	padding: 0 50px;
+	
 .worklist{
 	display: grid;
 	/*grid-template-columns: repeat(auto-fit,minimax(250px , 1fr));*/
@@ -213,6 +225,7 @@ width: 50%;
 	border-radius: 10px;
 	position: relative;
 	overflow: hidden;
+
 
 }
 .work img {
@@ -269,108 +282,29 @@ width: 50%;
 /***************************************contact**********************************/
 
 
-#contact{
-	padding: 30px 0;
-	color: #fff;
- 	width: 100%;
- 	height: 100vh;
-}
-.column-left {
-	flex-basis: 35%;
-	padding-left: 60px; 
-
-}
-.subtittle{
-	padding-bottom: 35px;
-}
-.column-left p {
-	margin-top: 10px;
-}
-.column-left p i {
-	color: #fff;
-	margin-right: 10px;
-	font-size: 18px;
-}
-.social-icons{
-	margin-top: 30px;
-}
-.social-icons a {
-	font-size: 25px;
-	color: #fff;
-	display: inline-block;
-	margin-right: 10px;
-	text-decoration: none; 
-	transition: 0.5s;
-}
-.social-icons a:hover {
-	color: #7762FB;
-	transform: translateY(-5px);
-}
-.column-right {
-	flex-basis: 60%;
-	
-	
-}
-.btn {
-	display: inline-block;
-	margin: 50px auto;
-	width: fit-content;
-	border:1px solid#7762FB;
-	padding: 14px 50px;
-	border-radius: 10px;
-	background: #7762FB;
-	text-decoration: none;
-	color: #fff;
-	cursor: pointer;
-}
-.btn.btn2{
-
-}
-.column-right form {
-	width: 75%;
-}
-form input , textarea {
-	width: 100%;
-	border:0;
-	border-radius: 6px;
-	font-size: 15px;
-	color: #fff;
-	padding: 15px;
-	margin: 15px 0;
-	outline: none;
-	background: #262626; 
-}
-form .btn2 {
-	font-size: 15px;
-	padding: 14px 60px ;
-	margin-top: 20px;
-	cursor: pointer;
-
-}
-.copyright{
-	width: 100%;
-	padding: 25px 0;
-	text-align: center;
-	font-size: 10px;
-	font-weight: 300;
-	background: #262626;
-	margin-top: 20px;
-}
 
 
 /******************************************@ media css****************************************************************/
-nav .fa-sharp {
-	display: none;
-}
+
 
 @media only screen and (max-width: 600px) {
+
+	.header{
+	width: 100%;
+	height: 100vh;
+	background-image: url('./images/bg1.jpg');
+	background-size: cover;
+	background-position: center;
+
+
+	}
 	.header-text{
- 	margin-top: 100%;
+ 	margin-top: 100px;
  	font-size: 15px;
  }
   .header-text h1{
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 18px;
   }
   .header-text h1 span {
   	color: #2B35AF;
@@ -378,15 +312,52 @@ nav .fa-sharp {
   nav .fa-sharp {
   	display: inline-block;
   	font-size: 20px;
+  	position: absolute;
+  	top: 20px;
+  	right: 20px;
   }
   nav ul {
   	background: #7762FB;
   	position: fixed;
   	top: 0;
-  	right: 0;
+  	right: -200px;
   	padding-top: 50px;
   	width: 200px;
   	height: 100vh;
+  	z-index: 2;
+  	transition: right 0.5s;
   }
+    nav ul li {
+    	display: block;
+    	margin: 40px;
+    }
+      nav ul .fa-sharp {
+      	position: absolute;
+      	top: 35px;
+      	left: 35px;
+        cursor: pointer;
+      }
+      .subtittle{
+      	font-size: 40px;
+      }
+      .About-column-1 , .About-column-2 {
+      	flex-basis: 100%;
+      }
+      .About-column-1 {
+      	margin-bottom: 20px;
+      }
+      .About-column-2 {
+      	font-size: 15px;
+      }
+      .tab-links {
+      	font-size: 15px;
+      	margin-right: 20px; 
+      } 
+      .column-left , .column-right {
+      	flex-basis: 100%;
+      }
+      .copyright {
+      	font-size: 14px;
+      }
 
 }
